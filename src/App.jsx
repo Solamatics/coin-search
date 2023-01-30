@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Coin from "./components/coin/Coin";
+import Coins from "./components/coin/Coin";
 import Navbar from "./components/navbar/Navbar";
 import "./app.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const url = import.meta.env.VITE_APP_URL;
 
@@ -25,8 +26,11 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Coin coins={coins} />
+      <Router>
+        <Navbar />
+      </Router>
+
+      <Coins coins={coins} />
     </>
   );
 }
