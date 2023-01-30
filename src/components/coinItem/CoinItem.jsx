@@ -2,6 +2,11 @@ import React from "react";
 import "./coinItem.css";
 
 const CoinItem = ({ coins }) => {
+  // format number to US dollar
+  let USDollar = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
   return (
     <>
       {coins.map((coin) => (
@@ -11,10 +16,10 @@ const CoinItem = ({ coins }) => {
             <img src={coin?.image} alt={coin?.name} />
             <p>{coin?.symbol}</p>
           </div>
-          <p>Current Price</p>
-          <p>Current price Change in 24h</p>
-          <p className="hide-mobile">Total Volume</p>
-          <p className="hide-mobile">Coin Market Cap</p>
+          <p>{USDollar.format(coin?.current_price)}</p>
+          <p>{coin?.price_change_24h}</p>
+          <p className="hide-mobile">{coin?.total_volume}</p>
+          <p className="hide-mobile">{coin?.market_cap}</p>
         </div>
       ))}
     </>

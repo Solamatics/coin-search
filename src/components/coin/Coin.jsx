@@ -16,9 +16,7 @@ const Coin = ({ coins }) => {
         </div>
       </div>
 
-      {coins.map((coin) => (
-        <CoinItem key={coin.id} coins={coins} />
-      ))}
+      <CoinItem coins={coins} />
     </div>
   );
 };
