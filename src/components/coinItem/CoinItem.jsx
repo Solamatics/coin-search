@@ -11,6 +11,16 @@ const CoinItem = ({ coins }) => {
   });
   return (
     <>
+      <div className="container">
+        <div className="heading">
+          <p>#</p>
+          <p className="coin-name">Coin</p>
+          <p>Price</p>
+          <p>24h</p>
+          <p className="hide-mobile">Volume</p>
+          <p className="hide-mobile">Market Cap</p>
+        </div>
+      </div>
       {coins.map((coin) => (
         <Link to={`/coin/${coin.id}`} element={<Coin />} key={coin.id}>
           <div className="coin-row">
