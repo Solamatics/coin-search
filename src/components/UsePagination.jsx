@@ -1,4 +1,4 @@
-export const UsePagination = ({
+export const usePagination = ({
   totalCount,
   pageSize,
   siblingCount = 1,

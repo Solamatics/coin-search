@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import "./coinItem.css";
 import { Link } from "react-router-dom";
 import Coin from "../routes/Coin";
+
+let PageSize = 10;
 
 const CoinItem = ({ coins }) => {
   // format number to US dollar
